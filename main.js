@@ -8,44 +8,6 @@ emailjs.init({
 
 const form = document.getElementById("contact-form");
 
-document.getElementById("name").addEventListener("blur", function () {
-    let name = this.value.trim();
-
-    if (name === "") {
-        document.getElementById("nameError").textContent = "Please enter your name.";
-    } else if (!/^[A-Za-z ]+$/.test(name)) {
-        document.getElementById("nameError").textContent = "Name can only contain letters and spaces.";
-    } else {
-        document.getElementById("nameError").textContent = "";
-    }
-});
-
-
-document.getElementById("email").addEventListener("blur", function () {
-    let email = this.value.trim();
-
-    if (email === "") {
-        document.getElementById("emailError").textContent = "Please enter your email.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        document.getElementById("emailError").textContent = "Please enter a valid email address.";
-    } else {
-        document.getElementById("emailError").textContent = "";
-    }
-});
-
-
-document.getElementById("message").addEventListener("blur", function () {
-    let message = this.value.trim();
-
-    if (message === "") {
-        document.getElementById("messageError").textContent = "Please enter your message.";
-    } else if (message.length < 10) {
-        document.getElementById("messageError").textContent = "Message must be at least 10 characters long.";
-    } else {
-        document.getElementById("messageError").textContent = "";
-    }
-});
-
 form.addEventListener("submit" , function(event){
     event.preventDefault();
 
